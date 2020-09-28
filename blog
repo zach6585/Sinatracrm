@@ -1,0 +1,10 @@
+I took the fwitter CRM and turned it into something much greater. For starters, instead of having a user who has many tweets and tweets that belong to a user,
+I have workers (the users) who have a lot of projects (the tweets), but the projects also have lots of workers. What this means is that you can have multiple 
+people working on a single project and you can have multiple projects per worker. To accomplish this, I used a join table. On top of that, I thought that 
+it would be interesting to have a Boolean value in my join table, so I used the Boolean 'leader'. What I used this for was that I made it so you could only
+edit and delete the project if you're the leader. I also created a new function which is 'add'. What this does is that it gives the leader the opportunity to add 
+other people to work on the project with them. Those people would automatically have 'leader' equal to 0, meaning they're not the leader (a value of 1 means they are), 
+and a new element would be added to the join table. Finally, with the concept of creating new projects, I made it so that whomever made the project was inherently
+assigned leader. 
+
+One thing I would want to add in a future version of this is the option to opt out of being added to a project that a leader added you too.
