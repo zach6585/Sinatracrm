@@ -1,0 +1,16 @@
+<% if logged_in? %>
+
+<form action="/new" method="POST">
+<label for="projectname">Project Name: </label>
+<input type="text" name="projectname"> <br>
+  <label for="notes">Notes: </label>
+  <input type="textarea" name="notes"> <br>
+
+  <input type="submit" name="submit" id="Submit">
+
+</form>
+
+<% else %>
+    <h1> You Must Be Logged in to Start Projects </h1>
+    <a href="/login">Login</a>
+<% end %>

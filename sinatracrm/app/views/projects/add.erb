@@ -1,0 +1,11 @@
+<!Doctype html>
+
+<html>
+<form action="/add/<%= @project.id %> " method="POST">
+<% @workers.each do |worker| %>
+    <label for="<%= worker.name %>"><%= worker.name %></label>
+    <input type="checkbox" name="<%= worker.name %>">
+<% end %> 
+<input type="submit" value="Submit" id="Submit" name="submit">
+</form>
+</html>

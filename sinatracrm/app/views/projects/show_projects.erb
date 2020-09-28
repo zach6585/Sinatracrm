@@ -1,0 +1,36 @@
+<!Doctype html>
+<% @projects.each do |j| %> 
+    <% @mm = Project.find_by_id(j.project_id) %>
+<% if @worker.id == j.worker_id %> 
+    
+    <%= "Project: #{@mm.name} " %>
+    <br>
+    <%= "Notes: #{@mm.notes}" %>
+    <br><br>
+    
+
+
+
+
+
+<% if j.leader == 1 %>
+
+<a href= "/projects/<%= j.project_id %>/edit">Edit Notes</a>
+<br>
+<a href='/delete/<%= j.project_id%>'>Delete Project</a>
+<br>
+<a href="/add/<%= j.project_id %>">Add a worker to the project</a>
+<br><br><br>
+
+<% end %>
+<% end %>
+<% end %>
+
+<br><br>
+<form action="/new1" method="post">
+    <input type="submit" value="Start a new project" id="Submit">
+</form>
+
+
+<br><br><br><br>
+<a href="/logout">Logout?</a>

@@ -1,0 +1,23 @@
+<!Doctype html> 
+
+<% a = @project.notes %>
+<% if !logged_in? %> 
+<h1>You're not logged in. Please log in to edit tweets</h1>
+<a href="/login">Login</a>
+<% elsif @join == nil %> 
+<h1>You aren't involved in this project. Please return to the homepage</h1>
+<a href="/projects">Return to homepage</a>
+<% elsif @join.leader != 1 %>
+<h1>You're not the leader so you don't have the authorization needed to add to the notes<h1>
+<% else %>
+<form action="/projects/<%= @project.id %>/" method="post">
+  <input type="hidden" id="hidden" name="_method" value="patch">
+  <input type="textarea" value="<%= a %>" name="notes">
+  <input type="submit" value="Submit" id="Submit">
+</form>
+<br><br>
+<% end %>
+<% if @a %> 
+<%= @a %> 
+<% end %> 
+
